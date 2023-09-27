@@ -1,0 +1,45 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Read the CSV file into a DataFrame
+data = pd.read_csv('world-population-by-country-2020.csv')
+
+# Remove commas and convert 'Population 2020', 'Migrants (net)', and 'Land Area (Km²)' to numeric
+data['Population 2020'] = data['Population 2020'].str.replace(',', '').astype(float)
+data['Migrants (net)'] = data['Migrants (net)'].str.replace(',', '').astype(float)
+data['Land Area (Km²)'] = data['Land Area (Km²)'].str.replace(',', '').astype(float)
+
+# Sort the data by land area in descending order and select the top 15 countries
+top_countries = data.sort_values(by='Land Area (Km²)', ascending=False).head(15)
+
+# Calculate population excluding migrants
+population_2020 = top_countries['Population 2020'] - top_countries['Migrants (net)']
+
+# Get unique colors for each country
+colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
+
+
+# Create a figure and axis with specified size
+fig, ax = plt.subplots(figsize=(15, 15))
+
+# Create the horizontal histogram with different colors for each bar
+bars = plt.bar(top_countries['Country (or dependency)'], population_2020, color=colors)
+
+# Set the x-axis scale to 10,000
+ax.set_ylim(0, 10000)
+
+# Display values above each bar
+for bar, population in zip(bars, population_2020):
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 50, f'{population:,.0f}', ha='center', va='bottom')
+
+# Rotate the x-axis labels for better visibility
+plt.xticks(rotation=90)
+
+# Add labels and title
+plt.ylabel('Population (Excluding Migrants) in 2020')
+plt.xlabel('Country')
+plt.title('Top 15 Countries by Land Area (2020 Population Excluding Migrants)')
+
+# Show the plot
+plt.show()
