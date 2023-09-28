@@ -1,0 +1,58 @@
+{
+  "user_id": "U4567",
+  "name": "Bob",
+  "last_played": [
+    {
+      "track_id": "T001",
+      "title": "Imagine",
+      "artist": "John Lennon",
+      "album": "Imagine",
+      "played_at": "2023-01-01T10:30:00Z"
+    },
+    {
+      "track_id": "T002",
+      "title": "Billie Jean",
+      "artist": "Michael Jackson",
+      "album": "Thriller",
+      "played_at": "2023-01-01T10:34:00Z"
+    },
+    {
+      "track_id": "T003",
+      "title": "Bohemian Rhapsody",
+      "artist": "Queen",
+      "album": "A Night at the Opera",
+      "played_at": "2023-01-01T10:40:00Z"
+    },
+    {
+      "track_id": "T004",
+      "title": "Stairway to Heaven",
+      "artist": "Led Zeppelin",
+      "album": "Led Zeppelin IV",
+      "played_at": "2023-01-01T10:50:00Z"
+    }
+  ],
+  "playlists": [
+    {
+      "playlist_id": "P001",
+      "title": "Top Hits",
+      "tracks": [
+        { "track_id": "T001", "title": "Imagine" },
+        { "track_id": "T003", "title": "Bohemian Rhapsody" },
+        { "track_id": "T005", "title": "Like a Rolling Stone" }
+      ]
+    },
+    {
+      "playlist_id": "P002",
+      "title": "Oldies but Goodies",
+      "tracks": [
+        { "track_id": "T002", "title": "Billie Jean" },
+        { "track_id": "T004", "title": "Stairway to Heaven" },
+        { "track_id": "T006", "title": "A Day in the Life" }
+      ]
+    }
+  ],
+  "subscription": {
+    "type": "premium",
+    "expires": "2023-12-31"
+  }
+}

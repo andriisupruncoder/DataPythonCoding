@@ -1,0 +1,15 @@
+{
+  "logs": [
+    {
+      "user_id": "U123",
+      "action": "login",
+      "timestamp": "2023-01-01T00:00:00Z"
+    },
+    {
+      "user_id": "U123",
+      "action": "view_product",
+      "product_id": "P567",
+      "timestamp": "2023-01-01T00:10:00Z"
+    }
+  ]
+}
