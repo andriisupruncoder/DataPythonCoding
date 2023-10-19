@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Async Service</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var socket = io();
+
+      socket.on('connect', function () {
+        socket.emit('request', { data: 'This is data from the client!' });
+      });
+
+      socket.on('reply', function (data) {
+        console.log('Received a message from the server!', data);
+      });
+    </script>
+  </body>
+</html>
